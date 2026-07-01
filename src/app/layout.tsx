@@ -3,6 +3,7 @@ import { Be_Vietnam_Pro } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import FloatingButtons from '@/components/FloatingButtons'
 
 const beVietnam = Be_Vietnam_Pro({
   weight: ['400', '500', '600', '700'],
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </div>
         <Footer />
+        <FloatingButtons />
       </body>
     </html>
   )
