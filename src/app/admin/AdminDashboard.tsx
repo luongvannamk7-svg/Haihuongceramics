@@ -126,7 +126,7 @@ export default function AdminDashboard() {
                     <div key={p._id} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
                       <div>
                         <p className="text-sm font-medium text-gray-800">{p.name}</p>
-                        <p className="text-xs text-gray-500">{p.category.name} · {p.sku}</p>
+                        <p className="text-xs text-gray-500">{p.category.name}</p>
                       </div>
                       <div className="flex items-center gap-3">
                         <span className="text-sm font-bold text-[#C4933F]">{p.price.toLocaleString('vi-VN')}₫/{p.unit}</span>
@@ -185,7 +185,7 @@ export default function AdminDashboard() {
                           <span className="text-xs text-gray-600">{p.category.name}</span>
                         </td>
                         <td className="px-5 py-3.5 hidden lg:table-cell">
-                          <span className="text-xs font-mono text-gray-500">{p.sku}</span>
+                          <span className="text-xs font-mono text-gray-500">{p._id}</span>
                         </td>
                         <td className="px-5 py-3.5 text-right">
                           <span className="text-sm font-semibold text-[#C4933F]">{p.price.toLocaleString('vi-VN')}₫</span>
