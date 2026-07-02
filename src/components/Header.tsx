@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 
@@ -9,10 +10,9 @@ const navLinks = [
     label: 'Sản Phẩm',
     href: '/san-pham',
     children: [
-      { label: 'Gạch Ốp Tường', href: '/san-pham?danh-muc=gach-op-tuong' },
-      { label: 'Gạch Lát Nền', href: '/san-pham?danh-muc=gach-lat-nen' },
+      { label: 'Gạch Ốp Lát', href: '/san-pham?danh-muc=gach-op-lat' },
+      { label: 'Ngói PRIME', href: '/san-pham?danh-muc=ngoi-prime' },
       { label: 'Thiết Bị Vệ Sinh', href: '/san-pham?danh-muc=thiet-bi-ve-sinh' },
-      { label: 'Gạch Ngoại Thất', href: '/san-pham?danh-muc=gach-ngoai-that' },
     ],
   },
   { label: 'Dự Án', href: '/du-an' },
@@ -40,10 +40,10 @@ export default function Header() {
     >
       {/* Top bar */}
       <div className="bg-[#2C2C2C] text-white text-xs py-1.5 px-4 hidden md:flex justify-between items-center">
-        <span>Showroom: 123 Đường Lê Lợi, Quận 1, TP.HCM</span>
+        <span>Showroom: Thị trấn Mộc Châu, Sơn La</span>
         <div className="flex items-center gap-4">
-          <a href="tel:0901234567" className="flex items-center gap-1 hover:text-[#C4933F] transition-colors">
-            <Phone size={12} /> 0901.234.567
+          <a href="tel:0399925882" className="flex items-center gap-1 hover:text-[#C4933F] transition-colors">
+            <Phone size={12} /> 0399.925.882
           </a>
           <span>|</span>
           <span>T2–T7: 8:00 – 17:30</span>
@@ -52,14 +52,8 @@ export default function Header() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 bg-[#C4933F] flex items-center justify-center">
-            <span className="text-white font-bold text-lg tracking-tight">HH</span>
-          </div>
-          <div>
-            <div className="font-bold text-[#2C2C2C] text-lg leading-tight tracking-wide">HẢI HƯƠNG</div>
-            <div className="text-[10px] text-[#9B8E82] tracking-[0.2em] uppercase">Ceramics</div>
-          </div>
+        <Link href="/" className="flex items-center shrink-0">
+          <Image src="/logo.jpg" alt="Hải Hương Ceramics" width={160} height={56} className="h-14 w-auto object-contain" priority />
         </Link>
 
         {/* Desktop nav */}

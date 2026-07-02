@@ -6,7 +6,7 @@ export default function FloatingButtons() {
     <div className="fixed bottom-6 right-5 z-50 flex flex-col items-end gap-3">
       {/* Zalo */}
       <a
-        href="https://zalo.me/0901234567"
+        href="https://zalo.me/0399925882"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat Zalo"
@@ -26,7 +26,7 @@ export default function FloatingButtons() {
 
       {/* Facebook Messenger */}
       <a
-        href="https://m.me/haihuongceramics"
+        href="https://www.facebook.com/haihuongceramic"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat Facebook"
@@ -52,12 +52,12 @@ export default function FloatingButtons() {
 
       {/* Phone call */}
       <a
-        href="tel:0901234567"
+        href="tel:0399925882"
         aria-label="Gọi điện"
         className="group flex items-center gap-2"
       >
         <span className="hidden group-hover:block bg-white text-[#2C2C2C] text-xs font-medium px-3 py-1.5 shadow-lg rounded-sm whitespace-nowrap border border-[#E0D8CF]">
-          0901.234.567
+          0399.925.882
         </span>
         <div className="w-12 h-12 rounded-full bg-[#C4933F] shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-200 hover:bg-[#D4A853]">
           <Phone size={20} className="text-white" />

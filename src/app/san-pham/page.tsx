@@ -1,5 +1,6 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Search, SlidersHorizontal, X } from 'lucide-react'
 import ProductCard from '@/components/ProductCard'
 import { mockProducts, mockCategories } from '@/lib/mockData'
@@ -12,10 +13,16 @@ const sortOptions = [
 ]
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams()
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState('')
   const [sort, setSort] = useState('default')
   const [showFilter, setShowFilter] = useState(false)
+
+  useEffect(() => {
+    const cat = searchParams.get('danh-muc')
+    if (cat) setActiveCategory(cat)
+  }, [searchParams])
 
   const filtered = useMemo(() => {
     let items = [...mockProducts]
