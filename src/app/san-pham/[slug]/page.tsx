@@ -2,17 +2,14 @@
 import { use, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ShoppingCart, Phone, ChevronRight, Check, Package, Ruler } from 'lucide-react'
-import { addToCart } from '@/lib/cartStore'
+import { Phone, ChevronRight, Check, Package, Ruler, MessageCircle } from 'lucide-react'
 import { mockProducts } from '@/lib/mockData'
 import ProductCard from '@/components/ProductCard'
 
 export default function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
   const product = mockProducts.find(p => p.slug.current === slug)
-  const [qty, setQty] = useState(1)
   const [activeImg, setActiveImg] = useState(0)
-  const [added, setAdded] = useState(false)
 
   if (!product) {
     return (
@@ -28,21 +25,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     : ['https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80']
 
   const related = mockProducts.filter(p => p._id !== product._id && p.category.slug.current === product.category.slug.current).slice(0, 4)
-
-  const handleAddToCart = () => {
-    for (let i = 0; i < qty; i++) {
-      addToCart({
-        _id: product._id,
-        name: product.name,
-        price: product.price,
-        unit: product.unit,
-        image: images[0],
-        slug: product.slug.current,
-      })
-    }
-    setAdded(true)
-    setTimeout(() => setAdded(false), 2000)
-  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
@@ -88,13 +70,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
         {/* Info */}
         <div>
           <p className="text-[#C4933F] text-xs font-medium uppercase tracking-widest mb-2">{product.category.name}</p>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#2C2C2C] mb-2 leading-snug">{product.name}</h1>
-          {'sku' in product && <p className="text-xs text-[#9B8E82] mb-4">Mã SP: {(product as any).sku}</p>}
-
-          <div className="flex items-baseline gap-2 mb-6">
-            <span className="text-3xl font-bold text-[#C4933F]">{product.price.toLocaleString('vi-VN')}₫</span>
-            <span className="text-sm text-[#9B8E82]">/{product.unit}</span>
-          </div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#2C2C2C] mb-4 leading-snug">{product.name}</h1>
 
           {product.shortDescription && (
             <p className="text-sm text-[#6B6B6B] leading-relaxed mb-6 border-l-2 border-[#C4933F] pl-4">{product.shortDescription}</p>
@@ -104,38 +80,22 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {product.inStock ? <><Check size={12} /> Còn hàng</> : 'Hết hàng'}
           </div>
 
-          {product.inStock && (
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <label className="text-sm font-medium text-[#2C2C2C] w-20">Số lượng</label>
-                <div className="flex items-center border border-[#E0D8CF] rounded-sm">
-                  <button onClick={() => setQty(q => Math.max(1, q - 1))} className="w-10 h-10 flex items-center justify-center text-[#6B6B6B] hover:text-[#2C2C2C] text-lg">−</button>
-                  <span className="w-12 text-center text-sm font-medium">{qty}</span>
-                  <button onClick={() => setQty(q => q + 1)} className="w-10 h-10 flex items-center justify-center text-[#6B6B6B] hover:text-[#2C2C2C] text-lg">+</button>
-                </div>
-                <span className="text-xs text-[#9B8E82]">{product.unit}</span>
-              </div>
-
-              <div className="flex gap-3">
-                <button
-                  onClick={handleAddToCart}
-                  className={`flex-1 flex items-center justify-center gap-2 py-3.5 font-semibold text-sm transition-all duration-200 ${
-                    added
-                      ? 'bg-green-600 text-white'
-                      : 'bg-[#2C2C2C] hover:bg-[#C4933F] text-white'
-                  }`}
-                >
-                  {added ? <><Check size={16} /> Đã thêm!</> : <><ShoppingCart size={16} /> Thêm vào giỏ</>}
-                </button>
-                <a
-                  href="tel:0901234567"
-                  className="flex items-center gap-2 border border-[#C4933F] text-[#C4933F] hover:bg-[#C4933F] hover:text-white px-5 py-3.5 font-semibold text-sm transition-colors"
-                >
-                  <Phone size={16} /> Gọi tư vấn
-                </a>
-              </div>
-            </div>
-          )}
+          <div className="flex flex-col sm:flex-row gap-3 mt-2">
+            <a
+              href="tel:0399925882"
+              className="flex-1 flex items-center justify-center gap-2 bg-[#C4933F] hover:bg-[#D4A853] text-white py-3.5 font-semibold text-sm transition-colors"
+            >
+              <Phone size={16} /> Gọi báo giá: 0399.925.882
+            </a>
+            <a
+              href="https://zalo.me/0399925882"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 border border-[#C4933F] text-[#C4933F] hover:bg-[#C4933F] hover:text-white py-3.5 font-semibold text-sm transition-colors"
+            >
+              <MessageCircle size={16} /> Zalo tư vấn
+            </a>
+          </div>
 
           {/* Quick specs */}
           <div className="mt-8 grid grid-cols-2 gap-3">

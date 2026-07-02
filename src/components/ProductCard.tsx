@@ -1,8 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ShoppingCart, Eye } from 'lucide-react'
-import { addToCart } from '@/lib/cartStore'
+import { Eye } from 'lucide-react'
 
 interface Product {
   _id: string
@@ -18,18 +17,6 @@ interface Product {
 
 export default function ProductCard({ product }: { product: Product }) {
   const imgUrl = product.images?.[0]?.asset?.url || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80'
-
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault()
-    addToCart({
-      _id: product._id,
-      name: product.name,
-      price: product.price,
-      unit: product.unit,
-      image: imgUrl,
-      slug: product.slug.current,
-    })
-  }
 
   return (
     <Link href={`/san-pham/${product.slug.current}`} className="group block bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E0D8CF]">
@@ -61,22 +48,14 @@ export default function ProductCard({ product }: { product: Product }) {
         {product.shortDescription && (
           <p className="text-xs text-[#6B6B6B] mb-3 line-clamp-2 leading-relaxed">{product.shortDescription}</p>
         )}
-        <div className="flex items-center justify-between mt-auto pt-3 border-t border-[#F0EBE3]">
-          <div>
-            <span className="font-bold text-[#C4933F] text-base">
-              {product.price.toLocaleString('vi-VN')}₫
-            </span>
-            <span className="text-[11px] text-[#9B8E82] ml-1">/{product.unit}</span>
-          </div>
-          {product.inStock && (
-            <button
-              onClick={handleAddToCart}
-              className="w-8 h-8 bg-[#2C2C2C] hover:bg-[#C4933F] text-white rounded-sm flex items-center justify-center transition-colors duration-200"
-              aria-label="Thêm vào giỏ"
-            >
-              <ShoppingCart size={14} />
-            </button>
-          )}
+        <div className="mt-auto pt-3 border-t border-[#F0EBE3]">
+          <a
+            href={`tel:0399925882`}
+            className="w-full flex items-center justify-center gap-2 bg-[#C4933F] hover:bg-[#D4A853] text-white text-xs font-semibold py-2 transition-colors duration-200"
+            onClick={e => e.stopPropagation()}
+          >
+            Liên hệ báo giá
+          </a>
         </div>
       </div>
     </Link>

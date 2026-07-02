@@ -7,8 +7,6 @@ import { mockProducts, mockCategories } from '@/lib/mockData'
 
 const sortOptions = [
   { value: 'default', label: 'Mặc định' },
-  { value: 'price-asc', label: 'Giá tăng dần' },
-  { value: 'price-desc', label: 'Giá giảm dần' },
   { value: 'name-asc', label: 'Tên A–Z' },
 ]
 
@@ -28,8 +26,6 @@ function ProductsContent() {
     let items = [...mockProducts]
     if (activeCategory) items = items.filter(p => p.category.slug.current === activeCategory)
     if (search) items = items.filter(p => p.name.toLowerCase().includes(search.toLowerCase()))
-    if (sort === 'price-asc') items.sort((a, b) => a.price - b.price)
-    if (sort === 'price-desc') items.sort((a, b) => b.price - a.price)
     if (sort === 'name-asc') items.sort((a, b) => a.name.localeCompare(b.name, 'vi'))
     return items
   }, [search, activeCategory, sort])
