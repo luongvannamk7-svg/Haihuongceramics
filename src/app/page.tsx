@@ -70,20 +70,19 @@ export default function HomePage() {
             <p className="text-[#C4933F] text-xs font-medium uppercase tracking-[0.3em] mb-2">Danh Mục</p>
             <h2 className="text-3xl font-bold text-[#2C2C2C]">Sản Phẩm Của Chúng Tôi</h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {mockCategories.map((cat, i) => (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+            {mockCategories.map((cat) => (
               <Link
                 key={cat._id}
                 href={`/san-pham?danh-muc=${cat.slug.current}`}
                 className="group relative overflow-hidden rounded-sm aspect-[4/3] bg-[#E8E0D5] flex items-end"
               >
                 <Image
-                  src={[
-                    'https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=500&q=80',
-                    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80',
-                    'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&q=80',
-                    'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&q=80',
-                  ][i]}
+                  src={{
+                    'gach-op-lat': '/cat-gach-op-lat.jpg',
+                    'ngoi-prime': '/cat-ngoi-prime.jpg',
+                    'thiet-bi-ve-sinh': '/cat-thiet-bi-ve-sinh.jpg',
+                  }[cat.slug.current] ?? '/cat-gach-op-lat.jpg'}
                   alt={cat.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
