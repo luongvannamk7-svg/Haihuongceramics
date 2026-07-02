@@ -3,12 +3,12 @@ import { useState } from 'react'
 import { Check, Phone, Mail, Clock, ArrowRight } from 'lucide-react'
 
 const productCategories = [
-  'Gạch Ốp Tường',
-  'Gạch Lát Nền',
-  'Gạch Ngoại Thất',
-  'Thiết Bị Vệ Sinh',
-  'Vòi Sen & Phụ Kiện',
-  'Trọn Bộ Phòng Tắm',
+  'Gạch Ốp Lát',
+  'Ngói PRIME',
+  'Bồn Cầu Roy',
+  'Lavabo Roy',
+  'Sen & Sen Cây Roy',
+  'Vòi Chậu Roy',
 ]
 
 export default function QuotePage() {
@@ -71,8 +71,8 @@ export default function QuotePage() {
             <h3 className="font-bold text-[#2C2C2C] mb-4 text-sm">Liên Hệ Trực Tiếp</h3>
             <div className="space-y-4">
               {[
-                { icon: Phone, label: 'Hotline tư vấn', value: '0901.234.567', href: 'tel:0901234567' },
-                { icon: Mail, label: 'Email', value: 'baogial@haihuongceramics.vn', href: 'mailto:baogial@haihuongceramics.vn' },
+                { icon: Phone, label: 'Hotline / Zalo', value: '0399.925.882', href: 'tel:0399925882' },
+                { icon: Mail, label: 'Email', value: 'info@haihuongceramics.com', href: 'mailto:info@haihuongceramics.com' },
                 { icon: Clock, label: 'Giờ làm việc', value: 'T2–T7: 8:00 – 17:30', href: undefined },
               ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex gap-3">

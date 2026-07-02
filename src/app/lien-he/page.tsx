@@ -29,7 +29,7 @@ export default function ContactPage() {
       <div className="text-center mb-12">
         <p className="text-[#C4933F] text-xs font-medium uppercase tracking-[0.3em] mb-2">Liên Hệ</p>
         <h1 className="text-3xl font-bold text-[#2C2C2C]">Hỗ Trợ & Tư Vấn</h1>
-        <p className="text-[#6B6B6B] mt-3 max-w-xl mx-auto">Đội ngũ chuyên gia của chúng tôi sẵn sàng tư vấn miễn phí cho mọi yêu cầu về vật liệu xây dựng</p>
+        <p className="text-[#6B6B6B] mt-3 max-w-xl mx-auto">Đội ngũ tư vấn của Hải Hương Ceramics sẵn sàng hỗ trợ miễn phí mọi yêu cầu về gạch ốp lát và thiết bị vệ sinh tại Sơn La – Mộc Châu</p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12">
@@ -39,9 +39,9 @@ export default function ContactPage() {
             <h2 className="font-bold text-[#2C2C2C] mb-5">Thông Tin Liên Hệ</h2>
             <div className="space-y-5">
               {[
-                { icon: MapPin, label: 'Showroom', value: '123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP.HCM' },
-                { icon: Phone, label: 'Hotline', value: '0901.234.567', href: 'tel:0901234567' },
-                { icon: Mail, label: 'Email', value: 'info@haihuongceramics.vn', href: 'mailto:info@haihuongceramics.vn' },
+                { icon: MapPin, label: 'Showroom', value: 'Thị trấn Mộc Châu, huyện Mộc Châu, tỉnh Sơn La' },
+                { icon: Phone, label: 'Hotline / Zalo', value: '0399.925.882', href: 'tel:0399925882' },
+                { icon: Mail, label: 'Email', value: 'info@haihuongceramics.com', href: 'mailto:info@haihuongceramics.com' },
                 { icon: Clock, label: 'Giờ làm việc', value: 'Thứ 2 – Thứ 7: 8:00 – 17:30' },
               ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex gap-4">
@@ -65,12 +65,13 @@ export default function ContactPage() {
           <div className="bg-[#E8E0D5] rounded-sm h-64 flex items-center justify-center border border-[#E0D8CF]">
             <div className="text-center">
               <MapPin size={32} className="text-[#C4933F] mx-auto mb-2" />
-              <p className="text-sm text-[#6B6B6B]">Bản đồ showroom</p>
+              <p className="text-sm text-[#6B6B6B] font-medium">Thị trấn Mộc Châu, Sơn La</p>
+              <p className="text-xs text-[#9B8E82] mt-1">Kho gạch & showroom gần 3000m²</p>
               <a
-                href="https://maps.google.com"
+                href="https://maps.google.com/?q=Thị+trấn+Mộc+Châu,+Mộc+Châu,+Sơn+La"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#C4933F] underline mt-1 block"
+                className="text-xs text-[#C4933F] underline mt-2 block"
               >
                 Xem trên Google Maps
               </a>
