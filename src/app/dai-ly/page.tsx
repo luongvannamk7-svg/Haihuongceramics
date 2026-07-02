@@ -1,66 +1,50 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-import { MapPin, Phone, Mail, Check, Building2, Award, TrendingUp, Users } from 'lucide-react'
+import { MapPin, Phone, Check, Building2, Award, TrendingUp, Users } from 'lucide-react'
 
 const dealers = [
   {
     id: 1,
-    name: 'Hải Hương Ceramics – Chi Nhánh Hà Nội',
-    address: '45 Đường Hoàng Quốc Việt, Cầu Giấy, Hà Nội',
-    phone: '024.3456.7890',
-    email: 'hanoi@haihuongceramics.vn',
-    region: 'Miền Bắc',
+    name: 'Showroom Hải Hương Ceramics',
+    address: 'TDP Nhà Nghỉ, Phường Thảo Nguyên, Sơn La',
+    phone: '0399.925.882',
+    region: 'Sơn La',
     isMain: true,
   },
   {
     id: 2,
-    name: 'Showroom Hải Hương – TP.HCM (Trụ Sở Chính)',
-    address: '123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP.HCM',
-    phone: '028.9012.3456',
-    email: 'hcm@haihuongceramics.vn',
-    region: 'Miền Nam',
-    isMain: true,
+    name: 'Vật Liệu Xây Dựng Đồng Nhàn',
+    address: 'Sông Mã, Sơn La',
+    phone: '',
+    region: 'Sơn La',
+    isMain: false,
   },
   {
     id: 3,
-    name: 'Đại Lý Minh Đức – Đà Nẵng',
-    address: '89 Đường Nguyễn Văn Linh, Thanh Khê, Đà Nẵng',
-    phone: '0236.345.6789',
-    email: 'danang@haihuongceramics.vn',
-    region: 'Miền Trung',
+    name: 'Vật Liệu Xây Dựng Đính Huệ',
+    address: 'Bắc Yên, Sơn La',
+    phone: '',
+    region: 'Sơn La',
     isMain: false,
   },
   {
     id: 4,
-    name: 'Đại Lý Hoàng Phát – Cần Thơ',
-    address: '12 Đường 30/4, Ninh Kiều, Cần Thơ',
-    phone: '0292.234.5678',
-    email: 'cantho@haihuongceramics.vn',
-    region: 'Miền Nam',
+    name: 'Vật Liệu Xây Dựng Hanh Minh',
+    address: 'Yên Châu, Sơn La',
+    phone: '',
+    region: 'Sơn La',
     isMain: false,
   },
   {
     id: 5,
-    name: 'Đại Lý Bảo Khánh – Nha Trang',
-    address: '67 Đường Trần Phú, Lộc Thọ, Nha Trang, Khánh Hòa',
-    phone: '0258.456.7890',
-    email: 'nhatrang@haihuongceramics.vn',
-    region: 'Miền Trung',
-    isMain: false,
-  },
-  {
-    id: 6,
-    name: 'Đại Lý Tiến Thành – Hải Phòng',
-    address: '234 Đường Lạch Tray, Ngô Quyền, Hải Phòng',
-    phone: '0225.678.9012',
-    email: 'haiphong@haihuongceramics.vn',
-    region: 'Miền Bắc',
+    name: 'Vật Liệu Xây Dựng Nhật Tuyền',
+    address: 'Ngã ba Tà Làng, Sơn La',
+    phone: '',
+    region: 'Sơn La',
     isMain: false,
   },
 ]
-
-const regions = ['Tất cả', 'Miền Bắc', 'Miền Trung', 'Miền Nam']
 
 const benefits = [
   { icon: Award, title: 'Chiết Khấu Độc Quyền', desc: 'Giá đại lý ưu đãi, chiết khấu lên đến 25% so với giá lẻ tùy theo sản lượng' },
@@ -70,12 +54,9 @@ const benefits = [
 ]
 
 export default function DealerPage() {
-  const [activeRegion, setActiveRegion] = useState('Tất cả')
   const [form, setForm] = useState({ name: '', company: '', phone: '', email: '', city: '', message: '' })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
-
-  const filtered = activeRegion === 'Tất cả' ? dealers : dealers.filter(d => d.region === activeRegion)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -105,7 +86,7 @@ export default function DealerPage() {
           <p className="text-[#C4933F] text-xs font-medium uppercase tracking-[0.3em] mb-3">Hệ Thống Phân Phối</p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Mạng Lưới Đại Lý</h1>
           <p className="text-gray-300 max-w-lg mx-auto">
-            Hơn 50 đại lý ủy quyền trên toàn quốc — tìm showroom gần bạn nhất để trải nghiệm trực tiếp sản phẩm Hải Hương Ceramics.
+            Hơn 30 đại lý phân phối tại Sơn La — tìm điểm bán gần bạn nhất để trải nghiệm trực tiếp sản phẩm Hải Hương Ceramics.
           </p>
         </div>
       </section>
@@ -139,25 +120,8 @@ export default function DealerPage() {
             <h2 className="text-2xl font-bold text-[#2C2C2C]">Tìm Showroom Gần Bạn</h2>
           </div>
 
-          {/* Filter */}
-          <div className="flex gap-2 justify-center mb-8 flex-wrap">
-            {regions.map(r => (
-              <button
-                key={r}
-                onClick={() => setActiveRegion(r)}
-                className={`px-5 py-2 text-sm font-medium transition-colors border ${
-                  activeRegion === r
-                    ? 'bg-[#C4933F] text-white border-[#C4933F]'
-                    : 'bg-white text-[#6B6B6B] border-[#E0D8CF] hover:border-[#C4933F] hover:text-[#C4933F]'
-                }`}
-              >
-                {r}
-              </button>
-            ))}
-          </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map(dealer => (
+            {dealers.map(dealer => (
               <div key={dealer.id} className={`bg-white border p-5 ${dealer.isMain ? 'border-[#C4933F]' : 'border-[#E0D8CF]'}`}>
                 {dealer.isMain && (
                   <span className="inline-block bg-[#C4933F] text-white text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 mb-3">
@@ -170,17 +134,15 @@ export default function DealerPage() {
                     <MapPin size={13} className="text-[#C4933F] shrink-0 mt-0.5" />
                     <span>{dealer.address}</span>
                   </div>
-                  <div className="flex gap-2">
-                    <Phone size={13} className="text-[#C4933F] shrink-0" />
-                    <a href={`tel:${dealer.phone.replace(/\./g, '')}`} className="hover:text-[#C4933F] transition-colors">{dealer.phone}</a>
-                  </div>
-                  <div className="flex gap-2">
-                    <Mail size={13} className="text-[#C4933F] shrink-0" />
-                    <a href={`mailto:${dealer.email}`} className="hover:text-[#C4933F] transition-colors truncate">{dealer.email}</a>
-                  </div>
+                  {dealer.phone && (
+                    <div className="flex gap-2">
+                      <Phone size={13} className="text-[#C4933F] shrink-0" />
+                      <a href={`tel:${dealer.phone.replace(/\./g, '')}`} className="hover:text-[#C4933F] transition-colors">{dealer.phone}</a>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-3 pt-3 border-t border-[#F0EBE3]">
-                  <span className="text-[11px] text-[#9B8E82] font-medium uppercase tracking-wide">{dealer.region}</span>
+                  <span className="text-[11px] text-[#9B8E82] font-medium uppercase tracking-wide">Sơn La</span>
                 </div>
               </div>
             ))}
