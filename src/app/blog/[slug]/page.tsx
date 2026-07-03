@@ -30,7 +30,7 @@ const posts: Record<string, {
     author: 'Chuyên gia Hải Hương',
     date: '25/06/2026',
     readTime: '6 phút đọc',
-    heroImage: '/products/tbvs/roy/bon-cau/z7987388499972_b97c61a56a2e06b1db78b8a9a1a3e3de.jpg',
+    heroImage: '/products/tbvs/roy/bon-cau/z7987388499972_b5bcc31b1d8db5ea7c90a6c33f198708.jpg',
     heroAlt: 'Bồn cầu thông minh ROY Thái Lan',
     content: null,
   },
@@ -136,7 +136,7 @@ function BlogGach60x60() {
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">Gạch PRIME 09203</h4>
           <p className="text-xs text-[#6B6B6B]">Vân đá tự nhiên tinh tế, tone kem trắng nhẹ nhàng. Phù hợp phòng ngủ và phòng khách phong cách resort.</p>
-          <Link href="/san-pham/g6060-9" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/gach-prime-09203-60x60" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
         <div className="border border-[#E0D8CF] p-4 bg-[#FAFAF8]">
           <div className="relative aspect-square mb-3 overflow-hidden">
@@ -144,7 +144,7 @@ function BlogGach60x60() {
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">Gạch HM 06354</h4>
           <p className="text-xs text-[#6B6B6B]">Vân gỗ mộc mạc, tone nâu ấm. Tạo cảm giác gần gũi thiên nhiên, rất hợp với phong cách cabin Tây Bắc.</p>
-          <Link href="/san-pham/g6060-2" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/gach-hm-06354-60x60" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
         <div className="border border-[#E0D8CF] p-4 bg-[#FAFAF8]">
           <div className="relative aspect-square mb-3 overflow-hidden">
@@ -152,7 +152,7 @@ function BlogGach60x60() {
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">Gạch TTC 39006</h4>
           <p className="text-xs text-[#6B6B6B]">Tone xám trung tính hiện đại, dễ phối nội thất. Lý tưởng cho sảnh đón và hành lang.</p>
-          <Link href="/san-pham/g6060-27" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/gach-ttc-39006-60x60" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
         <div className="border border-[#E0D8CF] p-4 bg-[#FAFAF8]">
           <div className="relative aspect-square mb-3 overflow-hidden">
@@ -160,7 +160,7 @@ function BlogGach60x60() {
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">Gạch PRIME 39001</h4>
           <p className="text-xs text-[#6B6B6B]">Vân đá marble trắng sang trọng, bề mặt bóng mờ chống chói. Phù hợp phòng tắm và phòng khách cao cấp.</p>
-          <Link href="/san-pham/g6060-1" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/gach-39301-60x60" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
       </div>
 
@@ -206,19 +206,19 @@ function BlogRoyToilet() {
       <div className="grid sm:grid-cols-2 gap-4 not-prose">
         <div className="border border-[#E0D8CF] p-4 bg-[#FAFAF8]">
           <div className="relative aspect-[4/3] mb-3 overflow-hidden">
-            <Image src="/products/tbvs/roy/bon-cau/z7987388499972_b97c61a56a2e06b1db78b8a9a1a3e3de.jpg" alt="Bồn cầu ROY 1 khối" fill className="object-cover" />
+            <Image src="/products/tbvs/roy/bon-cau/z7987388499972_b5bcc31b1d8db5ea7c90a6c33f198708.jpg" alt="Bồn cầu ROY 1 khối" fill className="object-cover" />
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">ROY Bồn Cầu 1 Khối</h4>
           <p className="text-xs text-[#6B6B6B]">Thiết kế liền khối thanh lịch, dễ vệ sinh, phù hợp phòng tắm nhỏ gọn.</p>
-          <Link href="/san-pham/roy-bc-1" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/bon-cau-roy-1" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
         <div className="border border-[#E0D8CF] p-4 bg-[#FAFAF8]">
           <div className="relative aspect-[4/3] mb-3 overflow-hidden">
-            <Image src="/products/tbvs/roy/bon-cau/z7987388527141_f80a4ffb13d7b25a5fe9e3e2ed7cf5e5.jpg" alt="Bồn cầu ROY 2 khối" fill className="object-cover" />
+            <Image src="/products/tbvs/roy/bon-cau/z7987388513502_7edf86691180cbb12f64f7a9036a758f.jpg" alt="Bồn cầu ROY 2 khối" fill className="object-cover" />
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">ROY Bồn Cầu 2 Khối</h4>
           <p className="text-xs text-[#6B6B6B]">Kiểu dáng truyền thống, két nước rời, dễ sửa chữa và thay thế phụ kiện.</p>
-          <Link href="/san-pham/roy-bc-2" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/bon-cau-roy-2" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
       </div>
 
@@ -277,7 +277,7 @@ function BlogNgoiPrime() {
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">Ngói Hera</h4>
           <p className="text-xs text-[#6B6B6B]">Dáng vảy cá truyền thống, màu đỏ gạch đặc trưng. Tạo cảm giác ấm áp, mộc mạc cho biệt thự nghỉ dưỡng.</p>
-          <Link href="/san-pham/ngoi-h1" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/ngoi-hera-do-08-06-101" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
         <div className="border border-[#E0D8CF] p-4 bg-[#FAFAF8]">
           <div className="relative aspect-square mb-3 overflow-hidden">
@@ -285,7 +285,7 @@ function BlogNgoiPrime() {
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">Ngói Planio</h4>
           <p className="text-xs text-[#6B6B6B]">Tone xám đen hiện đại, profile phẳng tối giản. Phù hợp công trình kiến trúc đương đại, resort cao cấp.</p>
-          <Link href="/san-pham/ngoi-p1" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/ngoi-planio-ghi-den" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
         <div className="border border-[#E0D8CF] p-4 bg-[#FAFAF8]">
           <div className="relative aspect-square mb-3 overflow-hidden">
@@ -293,7 +293,7 @@ function BlogNgoiPrime() {
           </div>
           <h4 className="font-bold text-sm text-[#2C2C2C] mb-1">Ngói WAVE XP</h4>
           <p className="text-xs text-[#6B6B6B]">Sóng lớn, chồng phủ ưu việt, chống mưa đạt chuẩn. Nhiều màu đa dạng — đỏ, nâu, ghi xanh, đen.</p>
-          <Link href="/san-pham/ngoi-w1" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
+          <Link href="/san-pham/ngoi-wave-xp-401" className="inline-block mt-2 text-[#C4933F] text-xs font-medium hover:underline">Xem sản phẩm →</Link>
         </div>
       </div>
 
